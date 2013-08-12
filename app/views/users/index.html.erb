@@ -1,5 +1,6 @@
 <% provide(:title,'Index') %>
 <h1>Listing users</h1>
+<%= will_paginate %>
 
 <table>
   <tr>
@@ -16,11 +17,16 @@
     <td><%= user.email %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <!-- link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } -->
+    <td><% if current_user.admin? && !current_user?(user) %>
+	| <%= link_to "delete", user, method: :delete,
+	data: { confirm: "You sure?" } %>
+	<% end %></td>
   </tr>
 <% end %>
 </table>
 
+<%= will_paginate %>
 <br />
 
 <%= link_to 'New User', new_user_path %>
