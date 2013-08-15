@@ -10,4 +10,17 @@
   <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
 </div>
 
+<div class="center hero-unit">
+	<table>
+		<% @product.each do |pro|  %>
+			<tr>
+				<td><%= pro.code %></td>
+				<td><%= pro.name %></td>
+			</tr>
+		<% end %>
+	</table>
+</div>	
+
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
+
