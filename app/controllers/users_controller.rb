@@ -7,9 +7,7 @@ class UsersController < ApplicationController
   
   # GET /users
   # GET /users.json
-  def index
-    
-    
+  def index   
     #@users = User.all
     @users = User.paginate(page: params[:page],:per_page => 1)    
     #logger.debug "Test abc #{@users.count}"             

@@ -1,12 +1,23 @@
 Demo::Application.routes.draw do
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]  
+  resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+  #get '/welcome/:id', to: 'welcome#show'
+
   get "welcome/index"
+   get "welcome/show"
+  #resources :welcome
+
+  # resources :welcome do
+   # #collection do      
+      # get "index"
+      # get "show"   
+   # #end    
+  # end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -60,9 +71,9 @@ Demo::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'welcome#index'
 
-  # See how all your routes lay out with "rake routes"
+# See how all your routes lay out with "rake routes"
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+# match ':controller(/:action(/:id))(.:format)'
 end
