@@ -1,8 +1,12 @@
 class Product < ActiveRecord::Base
   self.table_name = "product"    
-  attr_accessible :code,:name
+  attr_accessible :code,:name, :type
   validates :code,:name, presence:true
   validates :code, uniqueness: true  
+  validates :type, numericality: { only_integer: true }
+  validates :type, exclusion: { in: [3,6,9], message: "type %{value} is reserved." }
+  #validates :type, inclusion: { in: [3,6,9], message: "type %{value} is not a valid."  }
+  validates :name, format: {with: /\A[a-zA-Z]+\z/, message: "Only letters allowed"}, length:{minimum: 2}
   
   def Product.get_products(prams={})   
     sql = "SELECT id, code, name FROM product "
@@ -29,6 +33,7 @@ class Product < ActiveRecord::Base
     model = Product.new
     model.code = params[:code]
     model.name = params[:name]
+    model.type = params[:type]
     model.save
     return model
   end
@@ -37,6 +42,7 @@ class Product < ActiveRecord::Base
     model = Product.find_by_code(params[:code])
     if (model)
       model.name = params[:name]
+      model.type = params[:type]
       model.save  
     end  
     
