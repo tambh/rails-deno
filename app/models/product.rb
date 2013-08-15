@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   self.table_name = "product"    
   attr_accessible :code,:name
   validates :code,:name, presence:true
-  validates :code, uniqueness: true
+  validates :code, uniqueness: true  
   
   def Product.get_products(prams={})   
     sql = "SELECT id, code, name FROM product "
@@ -31,5 +31,19 @@ class Product < ActiveRecord::Base
     model.name = params[:name]
     model.save
     return model
+  end
+  
+  def Product.update_record(params)    
+    model = Product.find_by_code(params[:code])
+    if (model)
+      model.name = params[:name]
+      model.save  
+    end  
+    
+    return model
+  end
+  
+  def Product.delete_record(params)
+    
   end
 end

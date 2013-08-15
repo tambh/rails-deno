@@ -8,7 +8,8 @@ class WelcomeController < ApplicationController
     #myca = "bdsfjdshfjsdhfjsdhfsdfsd"
     #@param_debug = myca
     
-    pro=Product.Add_record({:code=>"CK05",:name=>''})
-    @param_debug = pro.errors
+    #pro=Product.Add_record({:code=>"CK05",:name=>''})    
+    #pro=Product.update_record({:code=>"CK04",:name=>''})    
+    #@param_debug = pro.errors if !pro.nil?
   end   
 end
