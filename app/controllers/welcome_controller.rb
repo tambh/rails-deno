@@ -7,5 +7,8 @@ class WelcomeController < ApplicationController
     #logger.debug("My object: #{@product.inspect}")
     #myca = "bdsfjdshfjsdhfjsdhfsdfsd"
     #@param_debug = myca
-  end 
+    
+    pro=Product.Add_record({:code=>"CK05",:name=>''})
+    @param_debug = pro.errors
+  end   
 end
