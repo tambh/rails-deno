@@ -11,5 +11,8 @@ class WelcomeController < ApplicationController
     #pro=Product.Add_record({:code=>"CK05",:name=>''})    
     #pro=Product.update_record({:code=>"CK04",:name=>''})    
     #@param_debug = pro.errors if !pro.nil?
+    
+     #pro=Product.delete_record({:code=>"CK04",:name=>''})    
+     #@param_debug = pro.errors if !pro.nil?
   end   
 end

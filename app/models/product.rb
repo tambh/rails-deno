@@ -44,6 +44,11 @@ class Product < ActiveRecord::Base
   end
   
   def Product.delete_record(params)
+    model = Product.find_by_code(params[:code])
+    if (model)
+       model.destroy
+    end
     
+    return model
   end
 end
