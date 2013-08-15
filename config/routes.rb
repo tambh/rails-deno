@@ -8,15 +8,24 @@ Demo::Application.routes.draw do
 
   #get '/welcome/:id', to: 'welcome#show'
 
-  get "welcome/index"
-   get "welcome/show"
+  #get 'welcome/index' => 'welcome#index'
+  #get 'welcome/show' => 'welcome#show', as: "abc"
+  #get "welcome/index"
+  # get "welcome/show"
   #resources :welcome
 
+  controller :welcome do
+    get 'welcome/index'     => :index
+    get 'welcome/show'   => :show    
+  end
+
   # resources :welcome do
-   # #collection do      
-      # get "index"
-      # get "show"   
-   # #end    
+  # #collection do
+  # #get "index"
+  # #get "show"
+  # get 'welcome/index' => 'welcome#index'
+  # get 'welcome/show' => 'welcome#show'
+  # #end
   # end
 
   # The priority is based upon order of creation:
