@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 11, 2013 at 05:33 PM
--- Server version: 5.5.16
--- PHP Version: 5.3.8
+-- Generation Time: Aug 16, 2013 at 03:18 PM
+-- Server version: 5.5.22
+-- PHP Version: 5.3.10-1ubuntu3
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -35,6 +35,32 @@ CREATE TABLE IF NOT EXISTS `microposts` (
   PRIMARY KEY (`id`),
   KEY `index_microposts_on_user_id_and_created_at` (`user_id`,`created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(40) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `name` varchar(120) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `code`, `name`, `type`) VALUES
+(1, 'CK01', 'May hut bui', NULL),
+(2, 'CK02', 'Noi com dien', NULL),
+(10, 'CK03', 'Test', 5),
+(11, 'CK04', 'Test', 3),
+(12, 'CK05', 'Test', 9),
+(13, 'CK06', 'Test', 1);
 
 -- --------------------------------------------------------
 
@@ -85,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `created_at`, `updated_at`, `password_digest`, `remember_token`, `admin`) VALUES
 (1, 'tambh', 'tambh@gmail.com', '2013-08-09 04:06:15', '2013-08-09 04:06:15', '$2a$10$Zan9IOp9hoKNXTsl5SSiaO2igEt85sVc/3S701J9e3AX1MRInUhlm', NULL, 0),
-(2, 'abc', 'abc@mail.com', '2013-08-09 07:14:26', '2013-08-11 11:09:15', '$2a$10$TdmIoCBMEZLG7V9jPFBeteBkkYIMnNjIh9kWiPTzppH/xqbJX83zi', '82d2d21830369eccd95eaf2e9518150494b349dc', 1);
+(2, 'abc', 'abc@mail.com', '2013-08-09 07:14:26', '2013-08-15 02:45:15', '$2a$10$TdmIoCBMEZLG7V9jPFBeteBkkYIMnNjIh9kWiPTzppH/xqbJX83zi', '257781bdd12f30b8b654bf175629a6b055a99613', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
