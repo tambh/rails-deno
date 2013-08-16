@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  set_inheritance_column "not_sti"
+  
   self.table_name = "product"    
   attr_accessible :code,:name, :type
   validates :code,:name, presence:true

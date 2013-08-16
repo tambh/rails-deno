@@ -17,7 +17,9 @@ Demo::Application.routes.draw do
   controller :welcome do   
       get 'welcome'     => :index
       get 'welcome/index'     => :index
-      get 'welcome/show'   => :show        
+      get 'welcome/show'   => :show    
+      post 'welcome/products' =>:products    
+      #get 'welcome/products' =>:products
   end
 
   # resources :welcome do

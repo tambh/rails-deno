@@ -27,6 +27,8 @@
 			<% end %>
 		</ul>
 	<% end %>
+	<%= @ss_demo%>
+	<%= @ck_demo %>
 	
 	<% @point= 2000 %>
 	<% @data = {:code => "dfdsfsd",:name=> "bjjffdsf"} %>
@@ -36,3 +38,22 @@
 </div>	
 
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+
+<script type="text/javascript">
+	$(function(){
+		$('#btntest').click(function(){
+			$.ajax({
+				url : "welcome/products",
+				type: "POST",
+				data: {id:1},
+				success:function(data){
+					if (data.msg.length==0){
+						console.log(data);	
+					}else{
+						alert(data.msg);	
+					}					
+				}
+			})
+		});
+	})
+</script>

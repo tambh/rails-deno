@@ -6,3 +6,10 @@
  <%= f.text_field :name %> 
  <%= f.submit "Create" %> 
 <% end %>  
+
+<br />
+<ul>	
+<% flash.each do |name,msg| %>
+	<li><%= "#{name} : #{msg}" %></li>
+<%end%>
+</ul>
