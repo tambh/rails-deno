@@ -26,7 +26,12 @@
 				<li><span class="text-error"><%= err %></span></li>
 			<% end %>
 		</ul>
-	<% end %>	
+	<% end %>
+	
+	<% @point= 2000 %>
+	<% @data = {:code => "dfdsfsd",:name=> "bjjffdsf"} %>
+	<%= render partial: "temp",locals: {zone:10}, object: @point %>
+	<!-- <%= render partial: "popup", collection: @product, as: :item, locals: {title: "Products Page"} %> -->
 </div>	
 
 <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>

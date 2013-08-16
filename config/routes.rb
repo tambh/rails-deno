@@ -14,9 +14,10 @@ Demo::Application.routes.draw do
   # get "welcome/show"
   #resources :welcome
 
-  controller :welcome do
-    get 'welcome/index'     => :index
-    get 'welcome/show'   => :show    
+  controller :welcome do   
+      get 'welcome'     => :index
+      get 'welcome/index'     => :index
+      get 'welcome/show'   => :show        
   end
 
   # resources :welcome do

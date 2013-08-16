@@ -1,0 +1,11 @@
+<h1>temp partical</h1>
+<%= zone %>
+<br />
+<!-- <%= @data[:code]%> -->
+<%= @point%>
+<br />
+<%= form_tag("welcome/show", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
