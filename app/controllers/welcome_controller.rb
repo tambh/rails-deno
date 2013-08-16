@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
     #@product = Product.all
     #@product = Product.get_products({:code=>'CK01',:name=>'m'})
     @product = Product.get_products()
+    @item = Product.new
     #render :json => @product
     #logger.debug("My object: #{@product.inspect}")
     #myca = "bdsfjdshfjsdhfjsdhfsdfsd"
@@ -19,7 +20,7 @@ class WelcomeController < ApplicationController
     #@param_debug = @pro.errors if !@pro.nil?
 
     #render :index
-    @item = Product.find(1)
+    #@item = Product.find(1)
     # redirect_to(@item) -> url = product_url
     #render "welcome/index"
     #render json:@item

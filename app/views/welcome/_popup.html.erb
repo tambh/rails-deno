@@ -1,2 +1,8 @@
-<h1>Popup</h1>
-
+<h1>Popup</h1> 
+<%= form_for @item, url: {action: "show"}, method: "get", html: {class: "form"} do |f| %>
+ <%= f.label :code %>
+ <%= f.text_field :code %> 
+  <%= f.label :name %> 
+ <%= f.text_field :name %> 
+ <%= f.submit "Create" %> 
+<% end %>  

@@ -4,8 +4,32 @@
 <!-- <%= @data[:code]%> -->
 <%= @point%>
 <br />
+<!-- form_tag(controller: "people", action: "search", method: "get", class: "nifty_form") -->
 <%= form_tag("welcome/show", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>
-  <%= text_field_tag(:q) %>
-  <%= submit_tag("Search") %>
+<%= label_tag(:q, "Search for:") %>
+<%= text_field_tag(:q) %>
+
+<%= check_box_tag(:pet_dog) %>
+<%= label_tag(:pet_dog, "I own a dog") %>
+<%= check_box_tag(:pet_cat) %>
+<%= label_tag(:pet_cat, "I own a cat") %>
+
+<%= radio_button_tag(:age, "child") %>
+<%= label_tag(:age_child, "I am younger than 21") %>
+<%= radio_button_tag(:age, "adult") %>
+<%= label_tag(:age_adult, "I'm over 21") %>
+
+<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
+<%= password_field_tag(:password) %>
+<%= hidden_field_tag(:parent_id, "5") %>
+
+<%= select_tag(:city_id, options_for_select([['Lisbon', 1], ['Madrid', 2]], 1)) %>
+
+<%= select_year(Time.now) %>
+
+<%= file_field_tag 'picture' %>
+
+<br>
+
+<%= submit_tag("Search") %>
 <% end %>
