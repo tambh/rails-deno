@@ -22,6 +22,11 @@ Demo::Application.routes.draw do
       #get 'welcome/products' =>:products
   end
 
+  controller :todo do   
+      get 'todo'     => :index
+      get 'todo/index'     => :index          
+  end
+  
   # resources :welcome do
   # #collection do
   # #get "index"
