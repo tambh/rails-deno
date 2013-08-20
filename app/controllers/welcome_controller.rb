@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  layout "common", except: [:index] #Action khong phai index
+  #layout "common", except: [:index] #Action khong phai index
   def index
     @product = Product.all
     #@product = Product.get_products({:code=>'CK01',:name=>'m'})
