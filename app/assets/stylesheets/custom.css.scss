@@ -123,6 +123,11 @@ footer ul li {
   margin-left: 10px;
 }
 
+.container{
+  //background-color: #FCF8E3;
+  //width:940px;
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -162,7 +167,7 @@ input {
   }
 }
 .content {
-  display: block;
+  display: block;  
 }
 .timestamp {
   color: $grayLight;
