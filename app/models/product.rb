@@ -9,6 +9,7 @@ class Product < ActiveRecord::Base
   validates :type, exclusion: { in: [3,6,9], message: "type %{value} is reserved." }
   #validates :type, inclusion: { in: [3,6,9], message: "type %{value} is not a valid."  }
   validates :name, format: {with: /\A[a-zA-Z]+\z/, message: "Only letters allowed"}, length:{minimum: 2}
+  scope :typepp , :conditions => { :type => 9 }
   
   def Product.get_products(prams={})   
     sql = "SELECT id, code, name FROM product "
