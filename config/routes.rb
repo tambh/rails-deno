@@ -18,7 +18,9 @@ Demo::Application.routes.draw do
       get 'welcome'     => :index
       get 'welcome/index'     => :index
       get 'welcome/show'   => :show    
-      post 'welcome/products' =>:products    
+      post 'welcome/products' =>:products
+      get 'welcome/upload'     => :upload
+      post 'welcome/uploadFile' =>:uploadFile    
       #get 'welcome/products' =>:products
   end
 

@@ -57,16 +57,25 @@ class WelcomeController < ApplicationController
 
   def show
     #render text: welcome_path + ' and ' + welcome_url
-    @assets_file = "#{Rails.root}/app/assets/files"    
-    
+    @assets_file = "#{Rails.root}/app/assets/files"
+
     #if File.exists?(path) && File.directory?(path)
-    # if File.directory?(@assets_file)      
-      # File.open(File.join(@assets_file, 'test.txt'), 'w+') do |f|
-        # f.puts "contents"
-      # end  
+    # if File.directory?(@assets_file)
+    # File.open(File.join(@assets_file, 'test.txt'), 'w+') do |f|
+    # f.puts "contents"
+    # end
     # end
 
     render :show
+  end
+
+  def uploadFile
+    post = Datafile.save(params[:upload])
+    render :text => "File has been uploaded successfully"
+  end
+  
+  def upload
+     render :uploadfile
   end
 
   def products
