@@ -57,6 +57,15 @@ class WelcomeController < ApplicationController
 
   def show
     #render text: welcome_path + ' and ' + welcome_url
+    @assets_file = "#{Rails.root}/app/assets/files"    
+    
+    #if File.exists?(path) && File.directory?(path)
+    # if File.directory?(@assets_file)      
+      # File.open(File.join(@assets_file, 'test.txt'), 'w+') do |f|
+        # f.puts "contents"
+      # end  
+    # end
+
     render :show
   end
 
@@ -72,7 +81,7 @@ class WelcomeController < ApplicationController
       if (pro)
         data[:product] =  pro
       else
-        data[:msg]="Error post ajax"  
+        data[:msg]="Error post ajax"
       end
     end
     render json: data
